@@ -34,8 +34,10 @@ module.exports = function(grunt) {
 		        fileName = fileName.substring(0, fileName.lastIndexOf('.json'));
 
 		        parseProps.forEach(function(prop) {
-		        	prototypeDef += '\t' + parseName + '.prototype.__defineGetter__("' + prop + '", function() {\n\t\t return this.get("'+ prop + '");\n\t});\n';
-		        	prototypeDef += '\t' + parseName + '.prototype.__defineSetter__("' + prop + '", function() {\n\t\treturn this.set("'+ prop + '");\n\t});\n';
+		        	prototypeDef += '\tObject.defineProperty(' + parseName + '.prototype, "' + prop + '",';
+		        	prototypeDef += '\n\t\tget: function() {\n\t\t\treturn this.get("'+ prop + '");\n\t\t},';
+		        	prototypeDef += '\n\t\tset: function(val) {\n\t\t\treturn this.set("'+ prop + '", val);\n\t\t}\n\t});\n';
+		        	
 		        });
 
 		        
