@@ -8,16 +8,20 @@ Use
 ---
 * Include the parse2angular.js as a grunt task
 * configure the task in grunt.initConfig
+```
     parse2angular: {
       files: ['<%= yeoman.app %>/parse-models/{,*/}*.json'],
       options: { outputDir: '<%= yeoman.app %>/scripts/services/' }
     }
+```
 * JSON file syntax/example (this is the format expected in the json file to provide details to the task on what needs to generated in the angular factory)
+```
     {
 		"angularModule":"myModuleName",
 		"parseObject":"",
 		"parseProps":["prop1", "prop2", "prop3"]
 	}
+```
 * run the task
 
 Notes
