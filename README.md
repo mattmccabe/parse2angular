@@ -14,7 +14,7 @@ Use
       options: { outputDir: '<%= yeoman.app %>/scripts/services/' }
     }
 ```
-* JSON file syntax/example (this is the format expected in the json file to provide details to the task on what needs to generated in the angular factory)
+* JSON file syntax/example (this is the format expected in the json file to provide details to the task on what needs to be generated in the angular factory)
 ```
     {
 		"angularModule":"myModuleName",
